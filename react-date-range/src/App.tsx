@@ -5,6 +5,7 @@ import "./App.css";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRangePicker } from "react-date-range";
+import Dropdown from "react-bootstrap/Dropdown";
 
 function App() {
   const selectionRange = {
@@ -19,15 +20,22 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <DateRangePicker ranges={[selectionRange]} />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Dropdown>
+          <Dropdown.Toggle variant="sucess" id="dropdown-basic">
+            desplegar calendario
+            <Dropdown.Menu>
+              <DateRangePicker ranges={[selectionRange]} />{" "}
+              <a
+                className="App-link"
+                href="https://reactjs.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Learn React
+              </a>
+            </Dropdown.Menu>
+          </Dropdown.Toggle>
+        </Dropdown>
       </header>
     </div>
   );
