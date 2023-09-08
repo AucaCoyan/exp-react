@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# Intro a `react`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introducción
 
-## Available Scripts
+React es un frameworks que desarrolló Facebook (ahora llamado Meta) para hacer
+paginas web.
 
-In the project directory, you can run:
+Pero eso es un montón de información, vayamos muchos pasos atrás:
 
-### `npm start`
+## La web
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+La web es algo muy complejo, y además evoluciona muy, pero muy rápido.
+Dentro de todo IT las cosas avanzan bastante rápido, pero la web es el papa de
+la velocidad de cambio en desarrollo de software.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Partiendo de esa asunción/realidad, hay _muchas_ alternativas para hacer páginas
+web. Todas de ellas coinciden en lo mismo: *para hacer una página web necesitás*
 
-### `npm test`
+- un html
+- un css
+- y un javascript
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Entonces, todas las librerías y frameworks de todos los lenguajes están
+orientadas a hacer eso: tener como salida un html, css y javascript. Eso es lo
+que Angular, Vue, React, Svelte, y todas las otras librerías tienen en común.
+Incluso entre distintos lenguajes es válido!
 
-### `npm run build`
+## Tipos de webs
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Debido a que la web es compleja, hay algunas "clasificaciones" o divisiones
+que pueden ayudar a distinguir una cosa de otra. React sirve para las páginas
+tipo SPA = Single Page Application. Esto en palabras sencillas significa que
+cuando cargás la web, la url no te cambia y vas navegando entre distintas
+"páginas". En realidad nunca te moviste de la URL, sino que es react
+_cambiándote la pantalla_ cada vez que haces click en un filtro o en una vista
+Hay otros tipos de webs, por ejemplo, en una página de documentacion raramente
+vas a tener muchos componentes, interacción, filtros y qué se yo. Suele ser una
+página más tranquilita. Bueno, esas páginas se suelen hacer en modo Static.
+significa que una URL es 1 y solo 1 página. Haces click en un link, y te lleva
+a otra página. Hay frameworks que te dejan hacer blogs (paginas con
+relativamente poca reactividad) como por ejemplo Eleventy, jeckyll, etc.
+Además hay más tipo, como por ejemplo el híbrido, que es la combinación de el
+estático más lo de SPA, creando partes interactivas solo donde las necesitás.
+Además hay un tema de performance, que las SPA son más lentas en cargar, y
+a google le cuesta más encontrar información para que cuando un usuario busque
+en la barra le aparezca info de tu página.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Por qué React?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Hay un motivo técnico, pero la realidad es que se aprende porque es el más
+utilizado en la industria (cerca de un 75% de las empresas usaran React).
+Entonces, por más bueno que sea otro framework, es difícil que se justifique
+aprenderlo antes que react. Es un especie de estandar con el cual comparar todo.
 
-### `npm run eject`
+## Qué es lo que hace react?
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Lo que hacen un poco todos los frameworks, como input un codigo en el lenguaje
+que sea, y como output un:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- html
+- css
+- js
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+En concreto, toma _componentes_ escritos en _jsx_ o _tsx_ y los _renderiza_ en
+un tag de un html llamado `root`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# NodeJS
 
-## Learn More
+Node es un motor de javascript para ejecutar fuera de un navegador.
+Tiene `npm` que es un CLI (Command Line Interface) que te deja ejecutar comandos
+y scripts
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Para que ande npm, necesitás crear un archivo `package.json`. Ese tiene
+generalmente una key `dependencies` y otra `scripts`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Con `npm install` se instalan las dependencias dentro de la carpeta
+`node_modules`. Y luego te crea un archivo `package-lock.json`
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Cuando le das a `npm start` en realidad lo que estas haciendo es ejecutando el
+script que aparece en el `package.json` en la parte de `scripts.start`.
